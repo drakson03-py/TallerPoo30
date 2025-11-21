@@ -27,10 +27,11 @@ public class Tareas {
 	    return "============\n"+"proyecto: " + this.proyecto + "\n"
 	         + "id: " + this.id + "\n"
 	         + "tipo: " + this.tipo + "\n"
-	         + "descrip: " + this.descrip + "\n"
+	         + "descripcion: " + this.descrip + "\n"
 	         + "estado: " + this.estado + "\n"
 	         + "responsable: " + this.responsable + "\n"
 	         + "complejidad: " + this.complejidad + "\n"
 	         + "fecha: " + this.fecha;
 	}
+	public String getResponsable() {return this.responsable;}
 }

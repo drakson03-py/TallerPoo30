@@ -48,4 +48,11 @@ public class Proyectos {
 	         + "responsable: " + this.responsable + "\n"
 	         + "tareas: " + listaTareas.size();
 	}
+	public void tareasAsignadas(String resp) {
+		
+		for(Tareas b:listaTareas) { 
+			if(b.getResponsable().equals(resp)) {System.out.println(b);}
+			
+	}
+}
 }

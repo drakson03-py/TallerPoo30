@@ -12,6 +12,7 @@
 		
 		public static List<Proyectos> proyectos= new ArrayList<>();
 		public static String poder;
+		public static String usuario;
 		
 		public static void main(String[] args) throws FileNotFoundException {
 			
@@ -27,12 +28,12 @@
 			
 			crearProyectos(sc);
 			printMenu();
+			
+			
+			
 			String eleccion = sc.nextLine();
-			
-			switch(eleccion) {
-			
-			case"1":{VerListaCompleta();}
-			}
+			admin(eleccion);
+			usuario(eleccion);
 			
 			
 			
@@ -41,6 +42,42 @@
 			sc.close();
 		}
 		
+		public static void admin(String eleccion) {
+			if(poder.equals("Administrador")) {
+				
+			switch(eleccion) {
+			
+				case"1":{VerListaCompleta();}
+			
+			}
+			
+		}
+		}
+		public static void usuario(String eleccion) {
+			if(poder.equals("Colaborador")) {
+				
+				switch(eleccion) {
+				
+				case"1":{VerLista();}
+				case"2":{tareasAsignadas();}
+				 	
+				}
+				
+			}
+			
+		}
+		
+		public static void tareasAsignadas() {
+			
+			for(Proyectos plop:proyectos) {
+				System.out.println("Tareas Asignadas");
+				plop.tareasAsignadas(usuario);
+			
+				
+			}
+			
+			
+		}
 		public static void VerListaCompleta() {
 			
 			for(Proyectos plop:proyectos) {
@@ -52,6 +89,16 @@
 			}
 			
 		}
+		public static void VerLista() {
+			
+			for(Proyectos plop:proyectos) {
+				System.out.println("--------------------------------");
+				System.out.println(plop);
+				
+			}
+			
+		}
+		
 		
 		public static void crearProyectos(Scanner sc) throws FileNotFoundException {
 			File pro = new File("Archivos/proyectos.txt");
@@ -87,7 +134,7 @@
 			String parte[] = linea.split("\\|");	
 			if (parte[0].equals(user)) { 
 				authUsuario = true;
-				if(parte[1].equals(password)) {authPassword = true;poder = parte[2];}
+				if(parte[1].equals(password)) {authPassword = true;poder = parte[2];usuario = parte[0];}
 				break;}
 			}
 			
