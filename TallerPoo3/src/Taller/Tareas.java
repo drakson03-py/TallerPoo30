@@ -22,5 +22,15 @@ public class Tareas {
 	    this.fecha = fecha;
 	}
 
-
+	
+	public String toString() {
+	    return "============\n"+"proyecto: " + this.proyecto + "\n"
+	         + "id: " + this.id + "\n"
+	         + "tipo: " + this.tipo + "\n"
+	         + "descrip: " + this.descrip + "\n"
+	         + "estado: " + this.estado + "\n"
+	         + "responsable: " + this.responsable + "\n"
+	         + "complejidad: " + this.complejidad + "\n"
+	         + "fecha: " + this.fecha;
+	}
 }
